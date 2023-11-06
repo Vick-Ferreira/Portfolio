@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,100;1,200&family=Open+Sans:ital,wght@0,300;0,700;0,800;1,300;1,600&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"crossorigin="anonymous"defer></script>
+    <script src="./cards.js"defer></script>
+    <title>Desenvolvedora Frontend - Vitoria Ferreira.</title>
+
+  </head>
+
+  <body style="font-family: 'Josefin Sans', sans-serif">
+
+    <nav class="navbar">
+      <div class="container-fluid containerNavBar justify-content-center fs-5">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tecnologias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bio</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid alturaLG">
+      <div class="row d-md-flex text-center justify-content-center ">
+        <div class="col-9   col-md-6 col-lg-5 col-xl-5 p-3 ">
+            <h1 class="top "> Desenvolvedora Front-end e Mobil<br/></h1>
+            <p class="lead">
+            Bem-vindo ao meu portfólio! Este projeto foi desenvolvido de forma
+            autônoma com o objetivo de destacar minhas habilidades no mercado de
+            trabalho, demonstrando técnicas de programação e boas práticas. Este
+            portfólio é resultado dos meus estudos diários, visando iniciar
+            minha carreira como desenvolvedora e representa uma amostra do meu
+            trabalhor e teve como foco criar interfaces criativas e funcionais.
+            Atualmente, sou estudante de Análise e Desenvolvimento de Sistemas
+            (ADS) na Universidade Positivo, no 4º período.<br/>
+            Fique à vontade para entrar em contato comigo em caso de dúvidas,
+            sugestões ou oportunidades de colaboração.<br/></br/><small>Acredito que o aprendizado é contínuo, e estou comprometida em aprimorar constantemente minhas habilidades.</small
+            ><br/><br/>
+            Você também pode acompanhar meu desenvolvimento no meu perfil do
+            GitHub. Obrigada por visitar meu portfólio, e estou animada para as
+            oportunidades que o futuro reserva!
+            </p>
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-xl-6 col-xxl-4 ms-xxl-5">
+            <div class="items_container"><!--DIV IMAGEM PERFIL-->
+                <img src="./img/2-removebg-preview.png" class="fotoPerfil m-0" alt="">
+            </div>
+
+            <div class="text-center mt-3"><!--DIV LINK PERFIL-->
+                <a href="https://www.linkedin.com/in/vitoria-ferreira-ti/" class="text-decoration-none link me-2 border-bottom">
+                    <i class="bi-linkedin pe-1"></i>Linkedin
+                </a>
+                <a href="https://github.com/Vick-Ferreira" class="text-decoration-none border-bottom link">
+                    <i class="bi-github pe-1"></i>Github
+                </a>
+            </div>
+
+            <!--BARRA DE PROGRESSO-->
+            <h1 class="fs-4 mt-3">Inglês:</h1>
+            <div class="progress p-0 mx-auto w-100" style="width: 10em;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 20%"></div>
+            </div>
+            <h1 class="fs-4 mt-3">Graduação:</h1>
+            <div class="progress p-0 mx-auto w-100" style="width: 10em;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 50%"></div>
+            </div>
+        </div>  
+    </div>
+    </div>
+ 
+    
+    <div class="container-fluid hards ">
+      <div class="row d-block d-md-flex text-center">
+        <div class="col p-5 icones" >
+          <img src="./img/folder_css_icon_161295.png"/>
+          <img src="./img/folder_html_icon_161292.png"/>
+          <img src="./img/android_studio_alt_macos_bigsur_icon_190395.png"/>
+          <img src="./img/microsoft_visual_studio_code_alt_macos_bigsur_icon_189955.png"/>
+        </div>
+        <div class="col  p-5 icones">
+          <img src="./img/folder_js_icon_161291.png"/>
+          <img src="./img/"/>
+          <img src="./img/fo"/>
+        </div>
+        <div class="col  p-5 icones">
+          <img src="./img/folder_react_icon_161285.png"/>
+          <img src="./img/kotlin.png"/>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--container, criação CARDS dinâmicos,  javascript-->
+    <div class="container-fluid  pt-0 p-5 container-card">
+    <div class="row "  id="cards"></div>
+    </div>
+
+    <!--MODAL-->
+    <div class="modal modal fade" id="zoom" ">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title" id="nomeProjeto">Modal title</h1>
+        </div>
+        <div class="modal-body">
+            <p>
+                AQUI VAI VIR A DESCRIÇÃO DE CADA PROJETO
+            </p>
+        </div>
+        
+    </div>
+  </div>
+    </div>
+
+    <!--Contato-->
+    <div class="container-fluid pt-5  bg-black">
+        <div class="row justify-content-center pb-5">
+                <div class="col-6 text-center container-link ">
+                    <a href="https://www.linkedin.com/in/vitoria-ferreira-ti/" class="link" target="_blank"><i class="bi-linkedin d-block"></i>Linkedin</a>
+                    <a href="#" class="  link" target="_blank"><i class="bi bi-whatsapp d-block"></i>(+55) 41 9 9994-4514</a>
+                    <a href="#" class="  link" target="_blank"><i class="bi bi-envelope d-block"></i>vitoriaferreirap06@gmail.com</a>
+                </div>
+            </div>
+    </div>
+
+    <!--Footer-->
+    <div class="container-fluid">
+      <div class="col">
+        <div class="row">
+          <div class="footer  ">
+            <p class="lead pt-4">Vitoria Ferreira &copy; 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+  </body>
+</html>
