@@ -60,7 +60,6 @@ small {
   background-color: #f5faf7;
   border-radius: 50px;
   margin-top: 5em;
-  width: 100%;
 }
 
 .fotoPerfil {
@@ -135,9 +134,6 @@ small {
     justify-content: end;
     text-align: end;
   }
-  .bg {
-    height: 700px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .tituloPortfolio {
@@ -155,4 +151,4 @@ small {
     padding: 5px;
     height: 100px;
   }
-}/*# sourceMappingURL=estilo.css.map */
+}/*# sourceMappingURL=estilo_20231106195627.css.map */
