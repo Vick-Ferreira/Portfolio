@@ -1,69 +1,3 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-  const userForm = document.getElementById('user-form');
-  const nameInput = document.getElementById('name');
-  
-  userForm.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Impede o envio do formulário
-
-    const name = nameInput.value;
-
-    if (name) {
-      try {
-        // Faz uma solicitação POST para adicionar o usuário ao banco de dados
-        const response = await fetch('https://json-clone-nu.vercel.app/usuario', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ name }),
-        });
-
-        if (response.status === 201) {
-          // O usuário foi adicionado com sucesso ao banco de dados
-          console.log('Usuário adicionado com sucesso:', name);
-        } else {
-          console.error('Erro ao adicionar o usuário:', response.status);
-        }
-      } catch (error) {
-        console.error('Erro durante a requisição:', error);
-      }
-    }
-
-    nameInput.value = ''; // Limpa o campo de entrada
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 const themeToggle = document.getElementById("themeToggle");
@@ -198,3 +132,71 @@ function zoomImagem (posicao){//vai verificar qual é a posição que a função
 
 
 
+//TESTE VECEL
+
+  //solicitação fetch para CardCards'  (Segudno grupo de cards com rolagem horizontas (setas teclado))
+  fetch('https://json-seven-gules.vercel.app/cardCards')
+  .then((resp) => resp.json())
+  .then((data) => {
+    const CardCards = data.CardCards; 
+    function renderizarCardCards() {
+      const containerCardCards = document.getElementById('CardCards'); 
+       //evento de click , setando setas do teclado, para manipular movimento de cards
+      containerCardCards.setAttribute('tabindex', '0');
+      containerCardCards.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          containerCardCards.scrollLeft -= 50; 
+        } else if (event.key === 'ArrowRight') {
+          containerCardCards.scrollLeft += 50; // 
+        }
+      });
+  
+      data.forEach((item) => {
+  
+        const cartao = document.createElement('div');
+        cartao.className = 'cartao';
+  
+        const imagem = document.createElement('img');
+        imagem.src = item.img; 
+        imagem.className = 'img';
+     
+  
+        const sub = document.createElement('h5');
+        sub.textContent = item.sub;
+        sub.className = 'sub';
+  
+        const descricao = document.createElement('p');
+        descricao.textContent = item.conteudo;
+        descricao.className = 'conteudoG';
+        descricao.style.fontWeight = '500';
+  
+        const link = document.createElement('a');
+        link.href = item.link;
+        link.textContent = 'Ler artigo';
+        link.className = 'link';
+  
+        
+        const icone = document.createElement('i');
+        icone.className = 'icone';
+        icone.innerHTML = '<i class="bi bi-arrow-up-right"></i>'; 
+  
+        
+      
+      
+        cartao.appendChild(imagem);
+        cartao.appendChild(sub);
+        cartao.appendChild(descricao);
+        cartao.appendChild(link);
+        cartao.appendChild(icone);
+  
+        containerCardCards.appendChild(cartao);
+      });
+    }
+  
+    //  função para renderizar os cartões
+    renderizarCardCards(CardCards);
+  })
+  .catch((error) => {
+    console.error('Erro durante a requisição:', error);
+  });
+  

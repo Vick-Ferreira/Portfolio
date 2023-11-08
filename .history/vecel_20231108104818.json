@@ -7,7 +7,7 @@
     "routes": [
       { "handle": "filesystem" },
       { "src": "/usuario", "dest": "/Back/server.js" },
-      { "src": "/", "dest": "/index.html" }
+      { "src": "/", "dest": "/front/index.html" }
     ]
   }
   
