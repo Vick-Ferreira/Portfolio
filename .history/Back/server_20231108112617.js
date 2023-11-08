@@ -10,7 +10,7 @@ app.post('/usuario', async (req, res) => {
 
   try {
     // Faz uma requisição POST para a API JSON para adicionar um usuário
-    const response = await axios.post('https://json-portfolio-alpha.vercel.app/usuario', { name });
+    const response = await axios.post('https://json-clone-nu.vercel.app/usuario', { name });
 
     // Verifica se a resposta da API foi bem-sucedida
     if (response.status === 201) {
