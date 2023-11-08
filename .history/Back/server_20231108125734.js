@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
 app.post('/usuario', async (req, res) => {
   const { name } = req.body;
 
@@ -22,4 +23,8 @@ app.post('/usuario', async (req, res) => {
     console.error('Erro na requisição para a API JSON:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
