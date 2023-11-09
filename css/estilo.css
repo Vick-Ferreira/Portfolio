@@ -195,6 +195,9 @@ small {
 }
 
 @media screen and (min-width: 768px) {
+  .Principal {
+    padding: 4em 2em;
+  }
   .tituloPortfolio {
     font-size: 55px;
   }
@@ -210,9 +213,6 @@ small {
   }
 }
 @media screen and (min-width: 992px) {
-  .Principal {
-    padding: 5em;
-  }
   .fotoPerfil {
     max-width: 500px !important;
   }
