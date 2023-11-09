@@ -18,47 +18,39 @@
   <body style="font-family: 'Josefin Sans', sans-serif">
 
     <!--btn voltar para o topo-->
-    <button class="btn p-2" id="scrollToTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+    <button class="btn p-2 " id="scrollToTopBtn"><i class="bi bi-arrow-up"></i></button>
 
 
     <nav class="navbar fixed-top">
       <div class="container containerNavBar justify-content-center  justify-content-md-end">
         <ul class="nav">
-          
           <!--btn troca de tema-->
           <button class="btn p-2 border-3" id="themeToggle">
             <span id="themeIcon" class="bi bi-moon"></span> <!-- Ícone inicial do botão (lua) -->
-         
+
           </button>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Projetos</a>
+            <a class="nav-link" aria-current="page" href="#projetos">Projetos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tecnologias</a>
+            <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bio</a>
+            <a class="nav-link" href="#bio">Bio</a>
           </li>
         </ul>
       </div>
     </nav>
-
-
-
-
- 
-
-
-
-  <div class="principalContainer justify-content-center">
- <div class="container ms-0 me-0 bg">
+  <div class=" justify-content-center">
+        <div class="container Principal">
       <div class="row ">
         <div class="col   d-link d-md-flex principalTop">
-        <div class=" pt-1 p-3 pb-1 pt-md-4 conteudoPrincipal ">
+        <div class=" pt-1 p-3 pb-1 pt-md-4 ">
           <h1 class="pt-5 pt-xl-1 tituloPortfolio fw-bold "> Desenvolvedora Front-end & Mobil<br/></h1>
-          <p class="lead mb-1 pe-xl-5">  
-             Acompanhar meu desenvolvimento no meu perfil do GitHub. 
+          <p class="lead mb-1">  
+            Acompanhar meu desenvolvimento no meu perfil do GitHub. 
             Tecnologias: HTML, CSS, Javascript, Node.js, Kotlin e mais ...</p>  
         </div>
         <div class="text-center ps-4 pe-4 pt-md-5 mt-md-5 "><!--DIV IMAGEM PERFIL-->
@@ -76,27 +68,11 @@
         </div>
       </div>
     </div>
+        </div>
   </div>
-    </div>
-   
-
-    <h1>Minha App de Usuários</h1>
-
-    <!-- Formulário para adicionar um usuário -->
-    <form id="user-form">
-        <input type="text" id="name" placeholder="Nome do usuário!" required>
-        <button type="submit">Adicionar Usuário</button>
-    </form>
-
-    <!-- Lista de usuários adicionados -->
-    <ul id="user-list"></ul>
-
-    <!-- Inclua o script JavaScript -->
- <script src="./cards.js"></script>
 
 
-
-<div class="flexContainer">
+<div class="container  flexContainer" id="bio">
   <div class=" container  w-50  pt-3 text-center justify-content-md-center">
     <div class="row">
       <div class="col-xl-">
@@ -139,18 +115,27 @@
         
     </div>
     </div>
- 
   </div> 
-  
-  
 
-
-
-
+  <!--tecnologias-->
+  <div class="container " >
+    <h1 class="text-center fw-bold"  id="skills">Skills</h1>
+    <div class="timeline H" id="timeline">
+      
+      <!-- linha do tempo -->
+      
+    </div>
+    <div class="text-center m-5">
+    <button  class=" btn arrow arrow-left"><i class="biArrow  bi-arrow-left"></i></button>
+    <button class=" btn arrow arrow-right"><i class="biArrow  bi-arrow-right"></i></button>
+  </div>
+  </div>
 
 
     <!--container, criação CARDS dinâmicos,  javascript-->
-    <div class="container   p-5 container-card">
+    <div class="container   p-5 container-card" >
+      <h1 class="text-center fw-bold m-5"  id="projetos">Projetos</h1>
+
     <div class="row "  id="cards"></div>
     </div>
 
@@ -162,14 +147,34 @@
         <h1 class="modal-title" id="nomeProjeto">Modal title</h1>
         </div>
         <div class="modal-body">
-            <p>
-                AQUI VAI VIR A DESCRIÇÃO DE CADA PROJETO
-            </p>
+            <p class="modal-body" id="descricaoProjeto" ></p>
         </div>
         
     </div>
   </div>
     </div>
+
+
+     <!--containerfeedback-->
+     <div class="container">
+      <div class="col   text-center  ">
+        <div class="row  m-5 justify-content-center ">
+          <h1 class="pb-3">Ajude meu desenvolvimento! Deixe um feedback do meu trabalho!</h1>
+          <!-- Formulário para adicionar feedback -->
+          <form id="user-form" >
+              <textarea class="form-control " id="feedback" rows="3" required></textarea>
+              <button type="submit" class="btn-add mt-3">Adicionar feedback</button>
+          </form>
+      
+          <!-- Lista de feedback adicionados -->
+          <ul id="user-list"></ul>
+      
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!--Contato-->
     <div class="container pt-5  ">
@@ -188,6 +193,8 @@
             </div>
     </div>
 
+
+
     <!--Footer-->
     <div class="container-fluid">
       <div class="col">
@@ -197,8 +204,9 @@
           </div>
         </div>
       </div>
-    </div> ''
+    </div> 
     
+
 
 
 
