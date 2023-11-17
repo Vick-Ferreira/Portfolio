@@ -3,38 +3,7 @@ let listaProjetos = [
       "video": "./video/VdeoCloneNubank.mp4",
       "nome": "Nubank",
       "descricao": " Desenvolvi este projeto com o objetivo de criar uma reprodução fiel da interface principal do Nubank, focando principalmente no aprimoramento das minhas habilidades no frontend. Utilizei JavaScript puro e Node.js para interação e criação dinâmica de elementos, além de explorar a inspeção detalhada dos mesmos. A incorporação de frameworks como Bootstrap e Sass contribuiu significativamente para a melhoria da experiência de desenvolvimento. Este projeto é autoral e foi desenvolvido de forma autônoma, refletindo o meu comprometimento e dedicação ao aprimoramento constante das minhas habilidades.",
-  },
-  {
-      "video": "",
-      "nome": "Bloco Tarefas",
-      "descricao": "",
-
-  },
-  {
-      "video": "",
-      "nome": "",
-      "descricao": "",
-
-  },
-  {
-      "video": "",
-      "nome": "",
-      "descricao": "",
-
-  },
-  {
-      "video": "",
-      "nome": "",
-      "descricao": "",
-
-  },
-  {
-      "video": "",
-      "nome": "",
-      "descricao": "",
-
-  },
-  
+  }
 ]
 // criando a estrutura de repetição
 
