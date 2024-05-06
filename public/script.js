@@ -45,7 +45,7 @@ window.addEventListener("scroll", () => {
   }
 });
 function criarImgBtn() {
-  fetch('https://portfolio-luuff61au-devferreira.vercel.app/ImgBtn')
+  fetch('https://portfolio-qpiczrwoy-devferreira.vercel.app/ImgBtn')
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
@@ -66,7 +66,7 @@ function criarImgBtn() {
     .catch(error => console.error('Erro ao buscar imagens:', error));
 }
 function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com base nesse índice (ONDEM DE ADIÇÃO)
-  fetch('https://portfolio-luuff61au-devferreira.vercel.app/projeto')
+  fetch('https://portfolio-qpiczrwoy-devferreira.vercel.app/projeto')
     .then(resp => resp.json())
     .then(data => {
       const projeto = data[index];
@@ -102,7 +102,7 @@ function enviarFeedback() {//mandando dados form html
     nome: nome,
     opiniao: opiniao
   }
-  fetch('https://portfolio-luuff61au-devferreira.vercel.app/feedback', {
+  fetch('https://portfolio-qpiczrwoy-devferreira.vercel.app/feedback', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
