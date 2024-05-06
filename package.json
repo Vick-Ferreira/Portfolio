@@ -8,7 +8,7 @@
     "Backend": "cd Backend && npm start",
     "public": "cd public && npm start",
     "deploy": "vercel --prod",
-    "build": "echo \"No build step specified\""
+    "build": "npm run compile && npm start"
   },
   "keywords": [],
   "author": "",
