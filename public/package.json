@@ -7,7 +7,8 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "start": "http-server -p 5000"
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
   },
   "keywords": [],
   "author": "",
