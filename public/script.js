@@ -59,6 +59,7 @@ function criarImgBtn() {
         button.addEventListener('click', function () {
           buscarProjetoPorIndex(index); //associar cada botão de imagem ao projeto correspondente pelo índice na matriz de projetos. 
           //Chama função e passa posição da imagem que associa a posição do projeto
+          //teste bild
         });
         minhaDiv.appendChild(button);
       });
