@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "cd Backend && npm install && npm start",
-    "Backend": "cd Backend && npm start",
-    "public": "cd public && npm start",
     "deploy": "vercel --prod"
   },
   "keywords": [],
