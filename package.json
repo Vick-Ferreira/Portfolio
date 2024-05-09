@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd Backend && npm install && npm start & cd  public && npm install && npm start",
+    "start": "cd Backend && npm install && npm start & cd public && npm install && npm start",
     "deploy": "vercel --prod"
   },
   "keywords": [],
