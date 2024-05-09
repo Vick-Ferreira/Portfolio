@@ -3,7 +3,7 @@
     "express": "^4.18.3",
     "http-server": "^14.1.1"
   },
-  "name": "frontend",
+  "name": "public",
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
