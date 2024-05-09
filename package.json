@@ -7,7 +7,8 @@
     "start": "npm run backend && npm run public",
     "backend": "cd backend && npm install && npm start",
     "public": "cd public && npm install && npm start",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "vercel-build": "npm start"
   },
   "keywords": [],
   "author": "",
