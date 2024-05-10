@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && npm run backend && npm run public",
-    "backend": "cd backend && npm install && npm start",
-    "public": "cd public && npm install && npm start",
-    "deploy": "vercel --prod",
-    "vercel-build": "npm start"
+    "start": "npm run start-backend && npm run start-frontend",
+    "start-backend": "cd Backend && npm start",
+    "start-frontend": "cd public && npm http-server"
   },
   "keywords": [],
   "author": "",
