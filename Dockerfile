@@ -16,7 +16,7 @@ COPY Backend ./Backend
 COPY public ./public
 
 # Define o diretório de trabalho para o diretório Backend
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/Backend
 
 # Expõe a porta 3000
 EXPOSE 3000
