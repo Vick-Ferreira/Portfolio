@@ -34,7 +34,6 @@ app.get('/', (req, res) => {
 
 // Conexão com o banco de dados MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => {
