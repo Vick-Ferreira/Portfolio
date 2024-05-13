@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads/videos')));
+app.use('/uploads/videos', express.static(path.join(__dirname, 'uploads/videos')));
 app.use('/uploads/imagens', express.static(path.join(__dirname, 'uploads/imagens')));
 app.use(express.static(path.join(__dirname, '../public')));
 // Roteadores
