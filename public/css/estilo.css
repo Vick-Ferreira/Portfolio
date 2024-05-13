@@ -210,8 +210,8 @@ small {
   margin: 15px;
   background-size: contain; /* Redimensiona a imagem para caber no botão mantendo a proporção */
   background-repeat: no-repeat;
-  background-position: center; /* Centraliza a imagem dentro do botão */
-  border: none; /* Remove a borda padrão do botão */
+  background-position: center;
+  border: none;
   background-color: transparent;
 }
 
