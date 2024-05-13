@@ -182,10 +182,10 @@ small {
 }
 
 .video_Element {
-  text-align: center;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #minhaDiv {
@@ -201,12 +201,18 @@ small {
 }
 
 .btn_modal {
-  height: 200px;
-  min-width: 250px;
-  width: 35%;
+  height: auto; /* Altura automática para se ajustar à altura da imagem */
+  width: auto; /* Largura automática para se ajustar à largura da imagem */
+  min-width: 400px; /* Largura mínima para evitar botões muito pequenos */
+  max-width: 250px; /* Largura máxima para evitar botões muito grandes */
+  min-height: 150px; /* Altura mínima para evitar botões muito pequenos */
+  max-height: 250px; /* Altura máxima para evitar botões muito grandes */
   margin: 15px;
-  background-size: cover;
-  /* Ajusta a imagem para cobrir o tamanho do botão */
+  background-size: contain; /* Redimensiona a imagem para caber no botão mantendo a proporção */
+  background-repeat: no-repeat;
+  background-position: center; /* Centraliza a imagem dentro do botão */
+  border: none; /* Remove a borda padrão do botão */
+  background-color: transparent;
 }
 
 .modal-body-link {
@@ -261,6 +267,7 @@ small {
   border-radius: 5px;
   text-align: center;
   margin: 20px;
+  padding: 5px;
 }
 
 @media screen and (min-width: 768px) {
