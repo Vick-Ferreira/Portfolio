@@ -49,7 +49,7 @@ function criarImgBtn() {
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
-      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMA
+      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMAaaa
         const button = document.createElement("button");
         button.classList.add('btn_modal');
         const imagePath = imgBtn.imagem.replace(/\\/g, '/');
