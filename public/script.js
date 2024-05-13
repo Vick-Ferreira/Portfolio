@@ -97,7 +97,7 @@ function exibirDetalhesDoProjeto(projeto) {
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
   // Corrige o caminho do vídeo
-  videoElement.src = projeto.video;
+  videoElement.src = `Backend/${projeto.video}`;
   videoElement.controls = true; //controles de reprodução ao vídeo
   const tituloElement = document.createElement('h2');
   tituloElement.textContent = projeto.titulo;
@@ -113,6 +113,7 @@ function exibirDetalhesDoProjeto(projeto) {
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
+
 
 criarImgBtn();
 
