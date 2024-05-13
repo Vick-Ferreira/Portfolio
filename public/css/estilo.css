@@ -202,7 +202,7 @@ small {
 .btn_modal {
   height: auto; /* Altura automática para se ajustar à altura da imagem */
   width: auto; /* Largura automática para se ajustar à largura da imagem */
-  min-width: 400px; /* Largura mínima para evitar botões muito pequenos */
+  min-width: 300px; /* Largura mínima para evitar botões muito pequenos */
   max-width: 250px; /* Largura máxima para evitar botões muito grandes */
   min-height: 250px; /* Altura mínima para evitar botões muito pequenos */
   max-height: 250px; /* Altura máxima para evitar botões muito grandes */
