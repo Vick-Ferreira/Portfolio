@@ -49,21 +49,23 @@ function criarImgBtn() {
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
-      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMAaaa
+      data.forEach((imgBtn, index) => {
         const button = document.createElement("button");
         button.classList.add('btn_modal');
         const imagePath = imgBtn.imagem.replace(/\\/g, '/');
         button.style.backgroundImage = `url(${imagePath})`;
         button.addEventListener('click', function () {
-          buscarProjetoPorIndex(index); //associar cada botão de imagem ao projeto correspondente pelo índice na matriz de projetos. 
-          //Chama função e passa posição da imagem que associa a posição do projeto
-          //teste bild
+          buscarProjetoPorIndex(index);
         });
         minhaDiv.appendChild(button);
       });
     })
-    .catch(error => console.error('Erro ao buscar imagens:', error));
+    .catch(error => {
+      console.error('Erro ao buscar imagens:', error);
+      alert('Ocorreu um erro ao carregar as imagens. Por favor, tente novamente mais tarde.');
+    });
 }
+
 function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com base nesse índice (ONDEM DE ADIÇÃO)
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())
