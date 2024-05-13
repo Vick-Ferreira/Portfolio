@@ -18,54 +18,68 @@ themeToggle.addEventListener("click", () => {
     console.log("Tema alterado para claro");
   }
 });
+// Função para verificar a posição das habilidades ao rolar a página
+function verificarPosicaoHabilidades() {
+  const habilidadesContainer = document.getElementById('skills');
 
-//logica apareção btn (leva ao topo), após certa rolagem
-window.addEventListener("scroll", () => {
-  console.log("Scrolling:", window.scrollY);
-  if (window.scrollY > 20) {
+  // Verifica se a posição vertical da tela é maior ou igual a 200 pixels
+  if (window.scrollY >= 750) {
+    habilidadesContainer.style.transition = "opacity 1s ease, transform 2s ease"; // Adiciona uma transição de 0.5 segundos
+    habilidadesContainer.style.opacity = "1"; // Define a opacidade para 1 para mostrar suavemente   
+    habilidadesContainer.style.transform = "translateX(0)"; // Move a habilidade da direita para a posição original
+  } else {
+    habilidadesContainer.style.transition = "opacity 1s ease, transform 3s ease"; // Remove a transição se a posição vertical não atender à condição
+    habilidadesContainer.style.opacity = "0"; // Define a opacidade para 0 para esconder
+    habilidadesContainer.style.transform = "translateX(100%)"; // Move a habilidade para fora da tela (direita)
+  }
+}
+
+// Evento de rolagem da página para chamar a função verificarPosicaoHabilidades
+window.addEventListener('scroll', verificarPosicaoHabilidades);
+
+
+// Função para mostrar ou ocultar o botão de voltar ao topo conforme a rolagem
+function verificarPosicaoBotaoTopo() {
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  if (window.scrollY > 200) { // Altura em que o botão de voltar ao topo deve aparecer
     scrollToTopBtn.style.display = "block";
   } else {
     scrollToTopBtn.style.display = "none";
   }
-  // evento de clique ao botão para rolar suavemente para o topo APÓS aparecer.
-  scrollToTopBtn.addEventListener("click", () => {
-    console.log("Botão de volta ao topo clicado");
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+}
+// Função para rolar suavemente para o topo da página
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
-  // Habilidades, logica entrada e saida de habilidades da tela
-  const habilidades = document.getElementById('habilidades');
-  const alturaHabilidades = habilidades.offsetTop;
-  if (window.scrollY > alturaHabilidades - window.innerHeight / 2) {
-    habilidades.classList.add("mostrar-habilidades"); // Adiciona classe para mostrar as habilidades
-  } else {
-    habilidades.classList.remove("mostrar-habilidades"); // Remove classe para esconder as habilidades
-  }
-});
+}
+// Evento de clique no botão de voltar ao topo para rolar suavemente para o topo
+document.getElementById("scrollToTopBtn").addEventListener("click", scrollToTop);
+verificarPosicaoBotaoTopo();
+window.addEventListener('scroll', verificarPosicaoBotaoTopo);// Adiciona eventos de rolagem para chamar as funções de verificação de posição
+
+
 function criarImgBtn() {
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/ImgBtn')
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
-      data.forEach((imgBtn, index) => {
+      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMAaaa
         const button = document.createElement("button");
         button.classList.add('btn_modal');
         const imagePath = imgBtn.imagem.replace(/\\/g, '/');
         button.style.backgroundImage = `url(${imagePath})`;
         button.addEventListener('click', function () {
-          buscarProjetoPorIndex(index);
+          buscarProjetoPorIndex(index); //associar cada botão de imagem ao projeto correspondente pelo índice na matriz de projetos. 
+          //Chama função e passa posição da imagem que associa a posição do projeto
+          //teste bild
         });
         minhaDiv.appendChild(button);
       });
     })
-    .catch(error => {
-      console.error('Erro ao buscar imagens:', error);
-      alert('Ocorreu um erro ao carregar as imagens. Por favor, tente novamente mais tarde.');
-    });
+    .catch(error => console.error('Erro ao buscar imagens:', error));
 }
-
 function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com base nesse índice (ONDEM DE ADIÇÃO)
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())

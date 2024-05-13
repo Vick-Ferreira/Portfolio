@@ -23,8 +23,7 @@ body.dark-theme {
 .bi-sun,
 .bi-moon {
   color: #752c23;
-}
-
+} /* Adiciona a propriedade de visibilidade e transição para as habilidades */
 #scrollToTopBtn {
   display: none;
   position: fixed;
@@ -205,7 +204,7 @@ small {
   width: auto; /* Largura automática para se ajustar à largura da imagem */
   min-width: 400px; /* Largura mínima para evitar botões muito pequenos */
   max-width: 250px; /* Largura máxima para evitar botões muito grandes */
-  min-height: 150px; /* Altura mínima para evitar botões muito pequenos */
+  min-height: 250px; /* Altura mínima para evitar botões muito pequenos */
   max-height: 250px; /* Altura máxima para evitar botões muito grandes */
   margin: 15px;
   background-size: contain; /* Redimensiona a imagem para caber no botão mantendo a proporção */
@@ -213,6 +212,11 @@ small {
   background-position: center;
   border: none;
   background-color: transparent;
+  opacity: 0.7;
+}
+
+.btn_modal:hover {
+  transform: translateY(-4px); /* Efeito de levantamento */
 }
 
 .modal-body-link {
