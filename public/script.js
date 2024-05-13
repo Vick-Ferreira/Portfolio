@@ -65,7 +65,7 @@ function criarImgBtn() {
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
-      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMAaaa
+      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMA
         const button = document.createElement("button");
         button.classList.add('btn_modal');
         const imagePath = imgBtn.imagem.replace(/\\/g, '/');
@@ -80,16 +80,18 @@ function criarImgBtn() {
     })
     .catch(error => console.error('Erro ao buscar imagens:', error));
 }
+
 function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com base nesse índice (ONDEM DE ADIÇÃO)
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())
     .then(data => {
       const projeto = data[index];
-      projeto.video = projeto.video.replace(/\\/g, '/');
+      projeto.video = `uploads/${projeto.video.replace(/\\/g, '/')}`;
       exibirDetalhesDoProjeto(projeto);
     })
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
 }
+
 function exibirDetalhesDoProjeto(projeto) {
   console.log("Caminho do vídeo:", projeto.video); // Adiciona um console.log para depurar o caminho do vídeo
   const videoElement = document.createElement('video');
@@ -112,8 +114,8 @@ function exibirDetalhesDoProjeto(projeto) {
   modal.show();
 }
 
-
 criarImgBtn();
+
 
 function enviarFeedback() {//mandando dados form html
   const nome = document.getElementById("nome").value;
