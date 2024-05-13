@@ -120,6 +120,10 @@ p {
     font-size: 110%;
     font-weight: 700;
 }
+.bg-warning h1 span, .projetosContainer  h1 span{
+    color: $font-secundary;
+    font-family: $font-orbitron;
+}
 
 .apresentacaoPrincipal p:last-of-type {
     //menos o ultimo filho
@@ -259,6 +263,7 @@ small {
     padding: 50px;
 }
 
+
 .habilidade {
     display: inline;
     justify-content: center;
@@ -295,6 +300,9 @@ small {
     padding: 5px;
 
 
+}
+.box:hover {
+    transform: translateY(-4px); /* Efeito de levantamento */
 }
 
 @media screen and (min-width: $mobile-widthMD) {

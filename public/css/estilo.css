@@ -101,6 +101,11 @@ p {
   font-weight: 700;
 }
 
+.bg-warning h1 span, .projetosContainer h1 span {
+  color: #752c23;
+  font-family: "Orbitron", sans-serif;
+}
+
 .apresentacaoPrincipal p:last-of-type {
   color: #752c23;
 }
@@ -272,6 +277,10 @@ small {
   text-align: center;
   margin: 20px;
   padding: 5px;
+}
+
+.box:hover {
+  transform: translateY(-4px); /* Efeito de levantamento */
 }
 
 @media screen and (min-width: 768px) {
