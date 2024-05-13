@@ -13,11 +13,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Configuração para permitir solicitações de qualquer origem nas rotas específicas
-app.use('/uploads', express.static(path.join(__dirname, './Backend/uploads')));
-app.use('/uploads/imagens', express.static(path.join(__dirname, './Backend/uploads/imagens')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads/imagens', express.static(path.join(__dirname, 'uploads/imagens')));
 app.use(express.static(path.join(__dirname, '../public')));
-
 // Roteadores
 const projetoRouter = require('./router/projetoRouter');
 const feedbackRouter = require('./router/feedbackRouter');
