@@ -91,8 +91,10 @@ function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com ba
 }
 function exibirDetalhesDoProjeto(projeto) {
   const videoElement = document.createElement('video');
-  videoElement.classList = ('video_Element');
-  videoElement.src = projeto.video;
+  videoElement.classList = 'video_Element';
+  // Corrige o caminho do vídeo
+  const videoSrc = projeto.video.replace(/\\/g, '/');
+  videoElement.src = videoSrc;
   videoElement.controls = true; //controles de reprodução ao vídeo
   const tituloElement = document.createElement('h2');
   tituloElement.textContent = projeto.titulo;
@@ -108,6 +110,7 @@ function exibirDetalhesDoProjeto(projeto) {
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
+
 criarImgBtn();
 
 function enviarFeedback() {//mandando dados form html
