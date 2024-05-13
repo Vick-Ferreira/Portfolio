@@ -90,6 +90,7 @@ function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com ba
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
 }
 function exibirDetalhesDoProjeto(projeto) {
+  console.log("Caminho do vídeo:", projeto.video); // Adiciona um console.log para depurar o caminho do vídeo
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
   // Corrige o caminho do vídeo
@@ -110,6 +111,7 @@ function exibirDetalhesDoProjeto(projeto) {
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
+
 
 criarImgBtn();
 
