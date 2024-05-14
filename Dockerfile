@@ -3,17 +3,22 @@ FROM node:14
 # Define o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
 
-# Copia o arquivo package.json e package-lock.json para o diretório de trabalho
+# Copia o arquivo package.json para o diretório de trabalho
 COPY package*.json ./
 
 # Instala as dependências do backend
 RUN npm install
 
-# Copia o restante do código da aplicação para o diretório de trabalho
-COPY . .
+# Copia o diretório Backend para o diretório de trabalho
+COPY Backend ./Backend
 
-# Define o diretório de trabalho para o diretório Backend
-WORKDIR /usr/src/app/Backend
+# Copia o diretório public para o diretório de trabalho
+COPY public ./public
+
+COPY package*.json ./
+
+# Define o diretório de trabalho
+WORKDIR /usr/src/app/
 
 # Expõe a porta 3000
 EXPOSE 3000
