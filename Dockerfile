@@ -9,13 +9,14 @@ COPY package*.json ./
 # Instala as dependências do backend
 RUN npm install
 
-# Copia o diretório Backend para o diretório de trabalho
+# Copia a pasta Backend para o diretório de trabalho
 COPY Backend ./Backend
 
-# Copia o diretório public para o diretório de trabalho
+# Copia a pasta public para o diretório de trabalho
 COPY public ./public
 
-COPY package*.json ./
+# Copia a pasta uploads de dentro da pasta Backend para o diretório de trabalho
+COPY Backend/uploads ./uploads
 
 # Define o diretório de trabalho
 WORKDIR /usr/src/app/
