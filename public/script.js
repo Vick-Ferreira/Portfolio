@@ -94,7 +94,7 @@ function exibirDetalhesDoProjeto(projeto) {
    // Corrigir a barra invertida no caminho do vídeo
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
-  videoElement.src = projeto.video; 
+  videoElement.src = `/uploads/${projeto.video}`;
   videoElement.controls = true;
 
   const tituloElement = document.createElement('h2');
