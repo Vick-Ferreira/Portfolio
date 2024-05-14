@@ -22,15 +22,11 @@ themeToggle.addEventListener("click", () => {
 function verificarPosicaoHabilidades() {
   const habilidadesContainer = document.getElementById('skills');
 
-  // Verifica se a posição vertical da tela é maior ou igual a 200 pixels
+  // Verifica se a posição vertical da tela é maior ou igual a 750 pixels
   if (window.scrollY >= 750) {
-    habilidadesContainer.style.transition = "opacity 1s ease, transform 2s ease"; // Adiciona uma transição de 0.5 segundos
-    habilidadesContainer.style.opacity = "1"; // Define a opacidade para 1 para mostrar suavemente   
-    habilidadesContainer.style.transform = "translateX(0)"; // Move a habilidade da direita para a posição original
+    habilidadesContainer.classList.add('mostrar-habilidades'); // Adiciona a classe para mostrar as habilidades
   } else {
-    habilidadesContainer.style.transition = "opacity 1s ease, transform 3s ease"; // Remove a transição se a posição vertical não atender à condição
-    habilidadesContainer.style.opacity = "0"; // Define a opacidade para 0 para esconder
-    habilidadesContainer.style.transform = "translateX(100%)"; // Move a habilidade para fora da tela (direita)
+    habilidadesContainer.classList.remove('mostrar-habilidades'); // Remove a classe para esconder as habilidades
   }
 }
 
@@ -81,38 +77,42 @@ function criarImgBtn() {
     .catch(error => console.error('Erro ao buscar imagens:', error));
 }
 
-function buscarProjetoPorIndex(index) {// buscar o projeto correspondente com base nesse índice (ONDEM DE ADIÇÃO)
+function buscarProjetoPorIndex(index) {
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())
     .then(data => {
       const projeto = data[index];
-      projeto.video = `uploads/${projeto.video.replace(/\\/g, '/')}`;
+      projeto.video = projeto.video;
       exibirDetalhesDoProjeto(projeto);
     })
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
 }
 
 function exibirDetalhesDoProjeto(projeto) {
-  console.log("Caminho do vídeo:", projeto.video); // Adiciona um console.log para depurar o caminho do vídeo
+  console.log("Caminho do vídeo:", projeto.video);
+  
+   // Corrigir a barra invertida no caminho do vídeo
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
-  // Corrige o caminho do vídeo
-  videoElement.src = `Backend/${projeto.video}`;
-  videoElement.controls = true; //controles de reprodução ao vídeo
+  videoElement.src = projeto.video; 
+  videoElement.controls = true;
+
   const tituloElement = document.createElement('h2');
   tituloElement.textContent = projeto.titulo;
+
   const descricaoElement = document.createElement('p');
   descricaoElement.textContent = projeto.descricao;
-  // Add elemento de vídeo, título e descrição ao modal
+
   const modalContent = document.getElementById('modalContent');
   modalContent.innerHTML = '';
   modalContent.appendChild(tituloElement);
   modalContent.appendChild(descricaoElement);
   modalContent.appendChild(videoElement);
-  // Exibir o modal
+
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
+
 
 
 criarImgBtn();
