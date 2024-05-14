@@ -76,13 +76,12 @@ function criarImgBtn() {
     })
     .catch(error => console.error('Erro ao buscar imagens:', error));
 }
-
 function buscarProjetoPorIndex(index) {
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())
     .then(data => {
       const projeto = data[index];
-      projeto.video = projeto.video;
+      projeto.video = projeto.video.replace(/\\/g, '/'); // Corrigir a barra invertida no caminho do vídeo
       exibirDetalhesDoProjeto(projeto);
     })
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
@@ -91,10 +90,9 @@ function buscarProjetoPorIndex(index) {
 function exibirDetalhesDoProjeto(projeto) {
   console.log("Caminho do vídeo:", projeto.video);
   
-   // Corrigir a barra invertida no caminho do vídeo
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
-  videoElement.src = `/uploads/${projeto.video}`;
+  videoElement.src = projeto.video;
   videoElement.controls = true;
 
   const tituloElement = document.createElement('h2');
@@ -112,7 +110,6 @@ function exibirDetalhesDoProjeto(projeto) {
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
-
 
 
 criarImgBtn();

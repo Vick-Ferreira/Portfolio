@@ -3,7 +3,7 @@ const Projeto = require('../models/projetos');
 exports.createProjeto = async (req, res) => {
   try {
     const { titulo, descricao } = req.body;
-    const video = path.posix.normalize(req.file.path); // Normaliza o caminho para usar '/'
+    const video = req.file.path.replace(/\\/g, '/'); // Caminho do arquivo de vídeo com barras normalizadas
     console.log("Dados recebidos para criação do projeto:", titulo, descricao, video);
     // Crie o projeto diretamente no MongoDB com o caminho do vídeo
     const projeto = await Projeto.create({
@@ -18,6 +18,7 @@ exports.createProjeto = async (req, res) => {
     res.status(500).json({ message: "Erro ao salvar o projeto." });
   }
 };
+
 
 exports.buscarProjeto = async (req, res) => {
   try {
