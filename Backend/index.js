@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 // Configuração do middleware para permitir solicitações de qualquer origem
 app.use(cors());
 
-// Configuração do middleware para analisar JSON e URL encoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Ou, se você não estiver usando body-parser:
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/uploads/imagens', express.static(path.join(__dirname, 'uploads/imagens')));
