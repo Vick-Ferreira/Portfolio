@@ -7,8 +7,9 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 
 // Configuração do middleware para permitir solicitações de qualquer origem
-app.use(cors());
-
+app.use(cors({
+  origin: 'https://vitoriaferreiradev.com.br'
+}));
 // Ou, se você não estiver usando body-parser:
 app.use(express.json());
 
