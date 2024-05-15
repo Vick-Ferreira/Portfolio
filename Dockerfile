@@ -15,8 +15,6 @@ COPY Backend ./Backend
 # Copia o diretório public para o diretório de trabalho
 COPY public ./public
 
-# Copia o diretório uploads para o diretório de trabalho
-COPY Backend/uploads ./uploads
 
 # Define o diretório de trabalho
 WORKDIR /usr/src/app/
