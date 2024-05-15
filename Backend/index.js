@@ -31,15 +31,13 @@ app.get('/', (req, res) => {
 });
 
 // Conexão com o banco de dados MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log('Conectado ao MongoDB');
-})
-.catch((error) => {
-  console.error('Erro ao conectar ao MongoDB:', error);
-});
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Conexão com MongoDB estabelecida com sucesso!');
+  })
+  .catch((error) => {
+    console.error('Erro ao conectar ao MongoDB:', error);
+  });
 
 const connection = mongoose.connection;
 connection.once('open', () => {

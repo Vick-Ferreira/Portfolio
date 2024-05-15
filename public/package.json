@@ -3,7 +3,7 @@
     "http-server": "^14.1.1",
     "npm": "10.7.0"
   },
-  "name": "frontend",
+  "name": "public",
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
