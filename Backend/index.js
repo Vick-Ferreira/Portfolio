@@ -10,8 +10,8 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 // Ou, se você não estiver usando body-parser:
-app.use(express.json({ limit: '100mb' }));
-app.use(express.urlencoded({ limit: '100mb', extended: true }));
+app.use(express.json());
+
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/uploads/imagens', express.static(path.join(__dirname, 'uploads/imagens')));

@@ -81,7 +81,6 @@ function buscarProjetoPorIndex(index) {
     .then(resp => resp.json())
     .then(data => {
       const projeto = data[index];
-      projeto.video = projeto.video.replace(/\\/g, '/'); // Corrigir a barra invertida no caminho do vídeo
       exibirDetalhesDoProjeto(projeto);
     })
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
