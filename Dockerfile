@@ -12,6 +12,7 @@ RUN npm install
 # Copia o diretório Backend para o diretório de trabalho
 COPY Backend ./Backend
 
+
 # Copia o diretório public para o diretório de trabalho
 COPY public ./public
 

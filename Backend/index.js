@@ -6,16 +6,12 @@ require('dotenv').config();
 const path = require('path');
 const port = process.env.PORT || 3000;
 
-// Configuração do middleware para permitir solicitações de qualquer origem
-app.use(cors({
-  origin: 'https://vitoriaferreiradev.com.br'
-}));
-// Ou, se você não estiver usando body-parser:
-app.use(express.json());
+app.use(cors()); // Adicionando CORS
+app.use(express.json()); // Middleware para analisar JSON no corpo das requisições
 
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/uploads/imagens', express.static(path.join(__dirname, 'uploads/imagens')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, '../public')));
 // Roteadores
 const projetoRouter = require('./router/projetoRouter');
