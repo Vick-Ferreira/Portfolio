@@ -1,12 +1,9 @@
-const router = require('express').Router()
-const Projeto = require('../models/projetos')
-const projetosController = require('../controller/projetoController')
+const express = require('express');
+const router = express.Router();
+const projetoController = require('../controllers/projetoController');
 const uploads = require("../config/multerVideo");
 
-
-//crinado rotas para a API
-router.post('/', uploads.single('video'), projetosController.createProjeto);
-
-router.get('/', projetosController.buscarProjeto);
+router.post('/', uploads.single('video'), projetoController.createProjeto);
+router.get('/', projetoController.buscarProjeto);
 
 module.exports = router;

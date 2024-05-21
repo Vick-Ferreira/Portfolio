@@ -57,25 +57,24 @@ window.addEventListener('scroll', verificarPosicaoBotaoTopo);// Adiciona eventos
 
 
 function criarImgBtn() {
-  fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/ImgBtn')
+  fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/imgBtn')
     .then(resp => resp.json())
     .then(data => {
       const minhaDiv = document.getElementById("minhaDiv");
-      data.forEach((imgBtn, index) => { //A IMAGEM E A POSIÇÃO DA MESMA
+      data.forEach((imgBtn, index) => {
         const button = document.createElement("button");
         button.classList.add('btn_modal');
         const imagePath = imgBtn.imagem.replace(/\\/g, '/');
-        button.style.backgroundImage = `url(${imagePath})`;
+        button.style.backgroundImage = `url(https://storage.googleapis.com/${imagePath})`;
         button.addEventListener('click', function () {
-          buscarProjetoPorIndex(index); //associar cada botão de imagem ao projeto correspondente pelo índice na matriz de projetos. 
-          //Chama função e passa posição da imagem que associa a posição do projeto
-          //teste bild
+          buscarProjetoPorIndex(index);
         });
         minhaDiv.appendChild(button);
       });
     })
     .catch(error => console.error('Erro ao buscar imagens:', error));
 }
+
 function buscarProjetoPorIndex(index) {
   fetch('https://portfolio-3ka4ipe26a-uw.a.run.app/projeto')
     .then(resp => resp.json())
@@ -86,12 +85,13 @@ function buscarProjetoPorIndex(index) {
     .catch(error => console.error('Erro ao buscar detalhes do projeto:', error));
 }
 
+
 function exibirDetalhesDoProjeto(projeto) {
   console.log("Caminho do vídeo:", projeto.video);
   
   const videoElement = document.createElement('video');
   videoElement.classList = 'video_Element';
-  videoElement.src = projeto.video;
+  videoElement.src = `https://storage.googleapis.com/${projeto.video}`;
   videoElement.controls = true;
 
   const tituloElement = document.createElement('h2');
@@ -110,11 +110,9 @@ function exibirDetalhesDoProjeto(projeto) {
   modal.show();
 }
 
-
 criarImgBtn();
 
-
-function enviarFeedback() {//mandando dados form html
+function enviarFeedback() {
   const nome = document.getElementById("nome").value;
   const opiniao = document.getElementById("opiniao").value;
   const feedbackData = {
@@ -131,12 +129,13 @@ function enviarFeedback() {//mandando dados form html
     .then(resp => resp.json())
     .then(data => {
       alert("Feedback enviado com sucesso! Obrigada!");
-      document.getElementById("feedbackForm").reset();//Limpar formulario apos evio dos dados
+      document.getElementById("feedbackForm").reset();
     })
     .catch(error => {
-      console.error("erro ao enviar feedback")
+      console.error("Erro ao enviar feedback:", error);
     })
 }
+
 
 
 

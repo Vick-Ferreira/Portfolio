@@ -1,17 +1,17 @@
-const Projeto = require('../models/projetos');
+const Projeto = require('../models/Projeto');
+const { uploadFile } = require('../index'); // Importa a função de upload
 
 exports.createProjeto = async (req, res) => {
   try {
     const { titulo, descricao } = req.body;
-    const video = req.file.path.replace(/\\/g, '/'); // Caminho do arquivo de vídeo com barras normalizadas
-    console.log("Dados recebidos para criação do projeto:", titulo, descricao, video);
-    // Crie o projeto diretamente no MongoDB com o caminho do vídeo
-    const projeto = await Projeto.create({
-      titulo,
-      descricao,
-      video,
-    });
-    console.log("Projeto criado com sucesso:", projeto);
+    const localFilePath = req.file.path;
+    const gcsFilePath = `videos/${req.file.filename}`;
+    await uploadFile(localFilePath, gcsFilePath);
+    const videoUrl = `https://storage.googleapis.com/meu_portfolio/${gcsFilePath}`;
+
+    const projeto = new Projeto({ titulo, descricao, video: videoUrl });
+    await projeto.save();
+
     res.json({ projeto, msg: "Projeto salvo com sucesso" });
   } catch (err) {
     console.error("Erro ao salvar o projeto:", err);
